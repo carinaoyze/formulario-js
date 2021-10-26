@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cadastro - Infocel</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+       
+        
+    </head>
+    <body>
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Infocel logo</a>
+        </nav>
+        <br>
+        <form action="#" method="" id="formu">
+            <div class="form-row">
+                <div class="form-group col-md-1"></div>
+                <div class="form-group col-md-2">
+                        <img src="mobile.png">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for-id="nome">Nome do dispositivo:</label>
+                        <input type="text" class="form-control" id="nome" value= "" name="nome" placeholder="Digite um nome">
+                    <label for-id="modelo">Modelo do dispositivo:</label>
+                        <input type="text" class="form-control" id="modelo" value= "" name="modelo" placeholder="Digite um modelo">
+                    <label for-id="pessoa">Nome do cliente:</label>
+                        <input type="text" class="form-control" id="pessoa" value= "" name="pessoa" placeholder="Digite um nome">
+                    <label for-id="datacon">Data de conserto:</label><br>
+                        <input type="date" class="form-control" id="datapen" value= "" name="datacon">
+                    <label for-id="ft">Foto do dispositivo:</label><br>
+                        <input type="file" class="form-control" id="ft" name="ft" accept='image/*'>
+                    
+                </div>
+                <div class="form-group col-md-5">
+                    <label for-id="feito">Problema Relatado:</label><br>
+                        <textarea id="problem" class="form-control" value= "" name="problem" rows="10"></textarea>
+                        <br><button class="btn btn-secondary" type="submit">Enviar</button>
+                </div>
+                
+            </div>
+            
+        </form>
+    <div class="container3">
+        <table class="table table-bordered table-striped">
+            <thead class="thead-light">
+                <tr>
+                    <th>#</th>
+                    <th>Foto</th>
+                    <th>Nome</th>
+                    <th>Modelo</th>
+                    <th>Nome do Cliente</th>
+                    <th>Data Pendente</th>
+                    <th>Problema/Conserto</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="tabelaPendentes">
+                
+            </tbody>
+        </table>
+    </div>     
+    
+    <!--Javascript-->
+    <script>
+        const formulario = document.querySelector('#formu');
+        const tabela = document.querySelector('#tabelaPendentes');
+        const inputNome = document.querySelector('#nome');
+        const inputModelo = document.querySelector('#modelo');
+        const inputPessoa = document.querySelector('#pessoa');
+        const inputDatapen = document.querySelector('#datapen');
+        const inputFt = document.querySelector('#ft');
+        const inputProblem = document.querySelector('#problem');
+       
+
+        // adiciona uma linha a tabela
+        formulario.addEventListener('submit', function(){
+            event.preventDefault();
+
+            let inputNomeValue = inputNome.value.trim();
+            let inputModeloValue = inputModelo.value.trim();
+            let inputPessoaValue = inputPessoa.value.trim();
+            let inputDatapenValue = inputDatapen.value.trim();
+            let inputProblemValue = inputProblem.value.trim();
+            const trNova = document.createElement('tr');
+            /*trNova.innerHTML = `
+                    <td><img height="200px" id="foto" src=""></td>
+                    <td>${inputNomeValue}</td>
+                    <td>${inputModeloValue}</td>
+                    <td>${inputPessoaValue}</td>
+                    <td>${inputDatapenValue}</td>
+                    <td>${inputProblemValue}</td>
+                    <td>
+                    <button class="btn btn-success">
+                    Concluir
+                    </button>
+                    </td>
+                    <td>
+                    <button class="btn btn-warning">
+                    Editar
+                    </button>
+                    </td>
+                    <td>
+                    <button class="btn btn-danger">
+                    Excluir
+                    </button>
+                    </td>`;
+            tabela.append(trNova);    
+               
+            const fto = document.querySelector('#foto');
+             */
+            const fileInput = inputFt.files || [];
+            const files = fileInput.length;
+            let a = 0;
+            while ( a < files) {
+                var filess = fileInput[a];
+                alert(filess.name);
+                a++;
+                for (let i = 0; i < fileInput.length; i++) {
+                    let file_img = fileInput[i].name;
+                    let id = document.createElement('td');
+                    let idRow = i + parseInt(1);
+                    let tdimg = document.createElement('td');
+                    let imgg = document.createElement('img');
+                    let nome = document.createElement('td');
+                    
+                    let modelo = document.createElement('td');
+                    let cliente = document.createElement('td');
+                    
+                    let data = document.createElement('td');
+                    let problema = document.createElement('td');
+                    
+                    let tdbutsuc = document.createElement('td');
+                    let tdbuted = document.createElement('td');
+                    let tdbutexc = document.createElement('td');
+                    let buttonSuc = tdbutsuc.innerHTML = `<button class="btn btn-success">
+                    Concluir</button>`;
+                    let buttonEdit = tdbuted.innerHTML = `<button class="btn btn-warning">
+                    Editar</button>`;
+                    let buttonExcl = tdbutexc.innerHTML = `<button class='btn btn-danger'>
+                    Excluir</button>`;
+                    
+                    let reader  = new FileReader();
+                    reader.addEventListener("load", function () {
+                        tabela.append(trNova);    
+                        trNova.append(id);
+                        id.append(idRow);
+                        trNova.append(tdimg);
+                        tdimg.append(imgg);
+                        imgg.setAttribute("src", reader.result);
+                        imgg.setAttribute("height", "200px");
+                        trNova.append(nome);
+                        nome.append(inputNomeValue);
+                        trNova.append(modelo);
+                        modelo.append(inputModeloValue);
+                        trNova.append(cliente);
+                        cliente.append(inputPessoaValue);
+                        trNova.append(data);
+                        data.append(inputDatapenValue);
+                        trNova.append(problema);
+                        problema.append(inputProblemValue);
+                        trNova.append(tdbutsuc);
+                        trNova.append(tdbuted);
+                        trNova.append(tdbutexc);
+                    });
+                    reader.readAsDataURL(filess);
+                }
+            }      
+            formulario.reset();
+        });
+
+        // exclusao de dados
+
+        tabela.addEventListener('click', function(){
+                let temclasseExcluir = event.target.classList.contains('btn-danger');
+                if(temclasseExcluir){
+                    const btnExcluir = event.target;
+                    const tr= btnExcluir.closest('tr').remove();
+                }
+        });
+
+        //edicao de dados
+        tabela.addEventListener('click', function(event){
+        let temClasseEditar = event.target.classList.contains('btn-warning');
+        if(temClasseEditar){
+            const btnEditar = event.target;
+            let isConteudoEditavel = false;
+
+            if(btnEditar.textContent.trim() == 'Editar'){ //trim para retirar espaços que pode conter na tag HTML
+                btnEditar.textContent = 'Salvar Edição';
+                isConteudoEditavel = true;
+            }
+            else{
+                btnEditar.textContent = 'Editar';
+            }
+
+            let tdTio = btnEditar.parentElement.previousElementSibling;
+
+            while(tdTio !== null){
+                tdTio.contentEditable = isConteudoEditavel;
+                tdTio.classList.toggle('editavel');
+                tdTio = tdTio.previousElementSibling;
+            }
+           
+        }
+
+        });
+
+        
+           
+    </script>
+    </body>
+</html>
+
