@@ -1,75 +1,119 @@
 <!DOCTYPE html>
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Cadastro - Infocel</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-       
-        
-    </head>
-    <body>
-        <nav class="navbar navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Infocel logo</a>
-        </nav>
-        <br>
-        <form action="#" method="" id="formu">
-            <div class="form-row">
-                <div class="form-group col-md-1"></div>
-                <div class="form-group col-md-2">
-                        <img src="mobile.png">
-                </div>
-                <div class="form-group col-md-3">
-                    <label for-id="nome">Nome do dispositivo:</label>
-                        <input type="text" class="form-control" id="nome" value= "" name="nome" placeholder="Digite um nome">
-                    <label for-id="modelo">Modelo do dispositivo:</label>
-                        <input type="text" class="form-control" id="modelo" value= "" name="modelo" placeholder="Digite um modelo">
-                    <label for-id="pessoa">Nome do cliente:</label>
-                        <input type="text" class="form-control" id="pessoa" value= "" name="pessoa" placeholder="Digite um nome">
-                    <label for-id="datacon">Data de conserto:</label><br>
-                        <input type="date" class="form-control" id="datapen" value= "" name="datacon">
-                    <label for-id="ft">Foto do dispositivo:</label><br>
-                        <input type="file" class="form-control" id="ft" name="ft" accept='image/*'>
-                    
-                </div>
-                <div class="form-group col-md-5">
-                    <label for-id="feito">Problema Relatado:</label><br>
-                        <textarea id="problem" class="form-control" value= "" name="problem" rows="10"></textarea>
-                        <br><button class="btn btn-secondary" type="submit">Enviar</button>
-                </div>
-                
-            </div>
-            
-        </form>
-        <div class="container3">
-            <table class="table table-bordered table-striped">
-                <thead class="thead-light">
-                    <tr>
-                        <th>#</th>
-                        <th>Foto</th>
-                        <th>Nome</th>
-                        <th>Modelo</th>
-                        <th>Nome do Cliente</th>
-                        <th>Data Pendente</th>
-                        <th>Problema/Conserto</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody id="tabelaPendentes">
-                    
-                </tbody>
-            </table>
-        </div>     
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Formulário de cadastro da InfoCel" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro - Infocel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Infocel logo</a>
+    </nav>
+    <br />
+    <form action="#" method="" id="formu">
+      <div class="form-row">
+        <div class="form-group col-md-1"></div>
+        <div class="form-group col-md-2">
+          <img src="mobile.png" alt="celular mobile" />
+        </div>
+        <div class="form-group col-md-3">
+          <label for="nome">Nome do dispositivo:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            value=""
+            name="nome"
+            placeholder="Digite um nome"
+          />
+          <label for="modelo">Modelo do dispositivo:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="modelo"
+            value=""
+            name="modelo"
+            placeholder="Digite um modelo"
+          />
+          <label for="pessoa">Nome do cliente:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="pessoa"
+            value=""
+            name="pessoa"
+            placeholder="Digite um nome"
+          />
+          <label for="datapen">Data de conserto:</label><br />
+          <input
+            type="date"
+            class="form-control"
+            id="datapen"
+            value=""
+            name="datacon"
+          />
+          <label for="ft">Foto do dispositivo:</label><br />
+          <input
+            type="file"
+            class="form-control"
+            id="ft"
+            name="ft"
+            accept="image/*"
+          />
+        </div>
+        <div class="form-group col-md-5">
+          <label for="problem">Problema Relatado:</label><br />
+          <textarea
+            id="problem"
+            class="form-control"
+            value=""
+            name="problem"
+            rows="10"
+          ></textarea>
+          <br /><button class="btn btn-secondary" type="submit">Enviar</button>
+        </div>
+      </div>
+    </form>
+    <div class="container3">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+          <tr>
+            <th>#</th>
+            <th>Foto</th>
+            <th>Nome</th>
+            <th>Modelo</th>
+            <th>Nome do Cliente</th>
+            <th>Data Pendente</th>
+            <th>Problema/Conserto</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tabelaPendentes"></tbody>
+      </table>
+    </div>
     <!--Javascript-->
     <script src="app.js"></script>
-    </body>
+  </body>
 </html>
-
